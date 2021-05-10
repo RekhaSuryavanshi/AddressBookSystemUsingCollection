@@ -37,9 +37,13 @@ public class AddressBookMain {
                     PersonDetails person = new PersonDetails(name, address, city, state, zip, phoneNo, email);
                     contacts.addContact(person);
                     break;
+
                 case 2:
                     contacts.editContact();
                     break;
+
+                case 3:
+                    contacts.deleteContact();
             }
         } while (input != 0) ;
             System.out.println("Thank you!");
