@@ -2,8 +2,7 @@ package com.assbook;
 
 public class PersonDetails {
 
-    public String firstName;
-    public String lastName;
+    public String name;
     public String address;
     public String city;
     public String state;
@@ -11,9 +10,8 @@ public class PersonDetails {
     public String phoneNo;
     public String email;
 
-    public PersonDetails(String firstName, String lastName, String address, String city, String state, String zip, String phoneNo, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public PersonDetails(String name, String address, String city, String state, String zip, String phoneNo, String email) {
+        this.name = name;
         this.address = address;
         this.city = city;
         this.state = state;
@@ -22,20 +20,12 @@ public class PersonDetails {
         this.email = email;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String firstName) {
+        this.name = name;
     }
 
     public String getAddress() {
@@ -84,5 +74,18 @@ public class PersonDetails {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "PersonDetails{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip='" + zip + '\'' +
+                ", phoneNo='" + phoneNo + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
