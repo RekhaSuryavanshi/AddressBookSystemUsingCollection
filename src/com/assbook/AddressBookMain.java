@@ -38,6 +38,7 @@ public class AddressBookMain {
                     contacts.addContact(person);
                     break;
                 case 2:
+                    contacts.editContact();
                     break;
             }
         } while (input != 0) ;
