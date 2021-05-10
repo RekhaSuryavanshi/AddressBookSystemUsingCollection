@@ -50,4 +50,25 @@ public class Contacts {
         }
         System.out.println(list);
     }
+
+    public void deleteContact() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the name");
+        String name = sc.nextLine();
+
+        PersonDetails details = null;
+        for (int i = 0; i < list.size(); i++) {
+            details = list.get(i);
+            if (details.getName().equals(name)) {
+                list.remove(i);
+            }
+        }
+        System.out.println(list);
+    }
+
+    public void view(){
+        for (PersonDetails person : list) {
+            System.out.println(person);
+        }
+    }
 }
