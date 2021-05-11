@@ -1,8 +1,6 @@
 package com.assbook;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Contacts {
 
@@ -66,9 +64,35 @@ public class Contacts {
         System.out.println(list);
     }
 
-    public void view(){
+    public void view() {
         for (PersonDetails person : list) {
             System.out.println(person);
+        }
+    }
+
+    public void searchPerson() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the city name in which you want search the person");
+        String cityname = sc.nextLine();
+        PersonDetails details = null;
+        for (int i = 0; i < list.size(); i++) {
+            details = list.get(i);
+            if (details.getCity().equals(cityname)) {
+                System.out.println(list.get(i));
+            }
+        }
+    }
+
+    public void viewPerson() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the state name in which you want view the person");
+        String statename = sc.nextLine();
+        PersonDetails details = null;
+        for (int i = 0; i < list.size(); i++) {
+            details = list.get(i);
+            if (details.getState().equals(statename)) {
+                System.out.println(list.get(i));
+            }
         }
     }
 }

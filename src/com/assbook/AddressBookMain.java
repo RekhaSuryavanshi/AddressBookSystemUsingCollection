@@ -15,12 +15,14 @@ public class AddressBookMain {
             System.out.println("2: Edit the contact");
             System.out.println("3: delete person");
             System.out.println("4: view Details");
+            System.out.println("5: Search person in city");
+            System.out.println("6: view person in state");
             System.out.println("0: exit the system");
             System.out.println("Please choose:");
             input = sc.nextInt();
             switch (input) {
                 case 1:
-                    for(int i=0; i<3; i++) {
+                    for(int i=0; i<2; i++) {
                         Scanner scan = new Scanner(System.in);
                         System.out.println("Enter Name");
                         String name = scan.nextLine();
@@ -51,6 +53,14 @@ public class AddressBookMain {
 
                 case 4:
                     contacts.view();
+                    break;
+
+                case 5:
+                    contacts.searchPerson();
+                    break;
+
+                case 6:
+                    contacts.viewPerson();
                     break;
             }
         } while (input != 0) ;
