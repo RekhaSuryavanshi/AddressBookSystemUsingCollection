@@ -4,12 +4,23 @@ import java.util.*;
 
 public class Contacts {
 
+    Map<String, List<PersonDetails>> addressBookMap = new HashMap<String, List<PersonDetails>>();
     List<PersonDetails> list = new ArrayList<PersonDetails>();
     Scanner scan = new Scanner(System.in);
 
     public void addContact(PersonDetails person) {
+        System.out.println("Enter the address book name");
+        String key = scan.nextLine();
         list.add(person);
-        System.out.println(list);
+        addressBookMap.put(key, list);
+        System.out.println(addressBookMap);
+        System.out.println("Fetching Keys and corresponding multiple Values ");
+        for (Map.Entry<String, List<PersonDetails>> entry : addressBookMap.entrySet()) {
+            key = entry.getKey();
+            List<PersonDetails> values = entry.getValue();
+            System.out.println("Key = " + key);
+            System.out.println("Values = " + values );
+        }
     }
 
     public void editContact() {
